@@ -6,6 +6,19 @@ Ror4proto::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.action_controller.perform_caching = false
   
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :test
+  
+  config.action_mailer.smtp_settings = { 
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "ror4proto.net", 
+    authentication: "plain",
+    user_name: "nextdoors.info", 
+    password: "testnextdoors", 
+    enable_starttls_auto: true
+  }
+  
   config.cache_classes = false
 
   # Do not eager load code on boot.
